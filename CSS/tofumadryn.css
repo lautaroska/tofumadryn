@@ -1,0 +1,574 @@
+:root {
+  --verde-innocent: #A5CD39;
+  --rosa-innocent: #FF9AA2;
+  --azul-innocent: #00B4D5;
+  --blanco-roto: #F7F7F7;
+  --gris-texto: #6D6E70;
+  --gris-claro: #E8E8E8;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: local('Poppins'), 
+         url('/fonts/poppins.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+/* Estilos básicos */
+body {
+    font-family: 'Poppins', 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    background-color: var(--blanco-roto);
+    color: var(--gris-texto);
+    line-height: 1.6;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Header principal */
+.hero-header {
+    background: linear-gradient(135deg, var(--verde-innocent) 0%, #8CBD00 100%);
+    color: white;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.logo-container {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.logo-container h1 {
+    font-size: 3rem;
+    margin: 0 0 15px 0;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.logo-icon {
+    font-size: 2.5rem;
+    margin-right: 15px;
+    animation: pulse 2s infinite;
+}
+
+.tagline {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin: 0;
+    font-weight: 300;
+    opacity: 0.95;
+    max-width: 500px;
+}
+
+.header-image {
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: transform 0.5s ease;
+}
+
+.header-image:hover {
+    transform: perspective(1000px) rotateY(0deg) scale(1.02);
+}
+
+.header-image img {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.header-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+}
+
+.header-wave svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--verde-innocent);
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+}
+
+.navbar nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.navbar a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* Logo Vegan debajo del navbar */
+.vegan-badge {
+    text-align: center;
+    padding: 20px 0;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.vegan-badge .logovegan {
+    height: 60px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.vegan-badge .logovegan:hover {
+    transform: scale(1.1);
+}
+
+/* Contenido principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.container h2 {
+    color: var(--azul-innocent);
+    border-bottom: 2px dashed var(--rosa-innocent);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Productos/recetas */
+.producto {
+    background: white;
+    border: 1px solid var(--gris-claro);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 10px;
+    width: calc(33% - 20px);
+    display: inline-block;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    box-sizing: border-box;
+    vertical-align: top;
+    transition: all 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.producto h3 {
+    color: var(--verde-innocent);
+    margin: 15px 0 10px;
+    font-size: 1.3rem;
+}
+
+.producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    border: 2px solid var(--gris-claro);
+    transition: all 0.5s ease;
+    filter: brightness(0.98);
+}
+
+.producto:hover img {
+    transform: scale(1.03);
+    filter: brightness(1.05);
+}
+
+/* Acordeón de recetas */
+details {
+    margin: 15px 0;
+}
+
+summary {
+    background: var(--azul-innocent);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    list-style: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary:hover {
+    background: var(--rosa-innocent);
+}
+
+summary svg {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.descripcion {
+    padding: 20px;
+    background: var(--blanco-roto);
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, var(--verde-innocent) 0%, #8CBD00 100%);
+    color: white;
+    padding: 40px 0 20px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.footer-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--rosa-innocent);
+}
+
+.direccion-maps {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+    margin: 10px 0;
+}
+
+.direccion-maps:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-3px);
+}
+
+.rrss-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.rrss-wsp, .rrss-mail {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+.rrss-wsp:hover {
+    background: rgba(37, 211, 102, 0.2);
+    color: #25D366;
+}
+
+.rrss-mail:hover {
+    background: rgba(255,255,255,0.2);
+    color: var(--rosa-innocent);
+}
+
+.copyright {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    width: 100%;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* WhatsApp flotante */
+.wsp-flotante {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 100;
+    animation: pulse 2s infinite;
+    transition: all 0.3s ease;
+}
+
+.wsp-flotante:hover {
+    transform: scale(1.1);
+}
+
+/* Animaciones */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.naturalia-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.naturalia-logo img {
+    max-height: 100px;
+    width: auto;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.naturalia-logo:hover img {
+    transform: scale(1.05);
+}
+
+/* Versión móvil */
+.footer-naturalia-logo {
+    display: none;
+}
+
+
+/* ESTILOS PARA MAPS-LINK */
+.maps-link {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.maps-icon {
+    width: 32px;
+    height: 32px;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
+    transition: all 0.3s ease;
+}
+
+.maps-link:hover {
+    transform: translateY(-2px);
+}
+
+.maps-link:hover .maps-icon {
+    filter: drop-shadow(0 3px 5px rgba(0,0,0,0.3)) brightness(1.1);
+}
+
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .header-content {
+        padding: 50px 20px 30px;
+    }
+    
+    .logo-container h1 {
+        font-size: 2.5rem;
+    }
+    
+    .tagline {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        padding: 40px 20px 30px;
+    }
+    
+    .logo-container {
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .logo-container h1 {
+        justify-content: center;
+    }
+    
+    .tagline {
+        margin: 0 auto;
+    }
+    
+    .header-image {
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .navbar nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .navbar a {
+        padding: 6px 12px;
+        font-size: 1rem;
+    }
+    
+    .producto {
+        width: calc(48% - 20px);
+    }
+    
+    .vegan-badge .logovegan {
+        height: 50px;
+    }
+    
+    .wsp-flotante {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .naturalia-logo {
+        display: none;
+    }
+    
+    .footer-naturalia-logo {
+        display: block;
+        margin: 0 auto 20px;
+    }
+    
+    .footer-naturalia-logo img {
+        max-height: 80px;
+    }
+
+    .maps-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container h1 {
+        font-size: 2rem;
+    }
+    
+    .logo-icon {
+        font-size: 2rem;
+    }
+    
+    .tagline {
+        font-size: 1.1rem;
+    }
+    
+    .producto {
+        width: 98%;
+        margin: 15px 0;
+    }
+    
+    .vegan-badge {
+        padding: 15px 0;
+    }
+    
+    .vegan-badge .logovegan {
+        height: 40px;
+    }
+    
+    .container h2 {
+        font-size: 1.6rem;
+    }
+    
+    .rrss-wsp, .rrss-mail, .direccion-maps {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .maps-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
