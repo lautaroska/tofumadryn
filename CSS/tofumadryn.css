@@ -55,6 +55,7 @@ body {
 }
 
 .logo-container h1 {
+    font-family: "Montserrat", Sans-serif;
     font-size: 4rem;
     margin: 0 0 7px 5px;
     display: flex;
