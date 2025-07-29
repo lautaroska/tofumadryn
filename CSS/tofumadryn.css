@@ -295,7 +295,6 @@ footer {
     padding: 40px 0 20px;
     position: relative;
     width: 100%;
-    text-align: center;
 }
 
 .footer-content {
@@ -304,7 +303,7 @@ footer {
     padding: 0 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     gap: 40px;
 }
 
@@ -312,21 +311,24 @@ footer {
     flex: 1;
     min-width: 250px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .footer-title {
     font-size: 1.3rem;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     position: relative;
     display: inline-block;
+    color: white;
 }
 
 .footer-title::after {
     content: '';
     position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
     height: 2px;
     background: var(--rosa-innocent);
 }
@@ -342,6 +344,7 @@ footer {
     background: rgba(255,255,255,0.1);
     transition: all 0.3s ease;
     margin: 10px 0;
+    font-size: 0.95rem;
 }
 
 .direccion-maps:hover {
@@ -353,7 +356,8 @@ footer {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 15px;
+    margin: 15px 0;
+    flex-wrap: wrap;
 }
 
 .rrss-wsp, .rrss-mail {
@@ -366,6 +370,7 @@ footer {
     border-radius: 30px;
     background: rgba(255,255,255,0.1);
     transition: all 0.3s ease;
+    font-size: 0.95rem;
 }
 
 .rrss-wsp:hover {
@@ -378,6 +383,32 @@ footer {
     color: var(--rosa-innocent);
 }
 
+/* Estilos para los iconos de redes sociales en el footer */
+footer .social-links {
+    margin: 20px 0 0;
+}
+
+footer .social-links a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 12px;
+    opacity: 0.9;
+}
+
+footer .social-links a:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+    color: white;
+}
+
+footer .social-links a:first-child:hover {
+    text-shadow: 0 0 8px rgba(59, 89, 152, 0.7);
+}
+
+footer .social-links a:nth-child(2):hover {
+    text-shadow: 0 0 8px rgba(225, 48, 108, 0.7);
+}
+
 .copyright {
     margin-top: 30px;
     padding-top: 20px;
@@ -385,6 +416,7 @@ footer {
     width: 100%;
     font-size: 0.9rem;
     opacity: 0.8;
+    text-align: center;
 }
 
 /* WhatsApp flotante */
@@ -558,6 +590,29 @@ footer {
     .maps-icon {
         width: 28px;
         height: 28px;
+    }
+  
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .footer-section {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .direccion-maps, 
+    .rrss-wsp, 
+    .rrss-mail {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    footer .social-links a {
+        font-size: 1.3rem;
+        margin: 0 10px;
     }
 }
 
