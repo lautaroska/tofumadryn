@@ -51,12 +51,12 @@ body {
 
 .logo-container {
     flex: 1;
-    padding-right: 40px;
+    padding-right: 37px;
 }
 
 .logo-container h1 {
     font-size: 4rem;
-    margin: 0 0 10px 5px;
+    margin: 0 0 7px 5px;
     display: flex;
     align-items: center;
     color: white;
